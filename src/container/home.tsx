@@ -28,7 +28,7 @@ const Home = (): JSX.Element => {
     <div className="mainContainer">
       <div className="bodyContainer">
         <Left />
-        <div className="content">
+        <div className="content" data-testid="content-element">
           <Middle
             questions={questions}
             editQuestion={editQuestion}

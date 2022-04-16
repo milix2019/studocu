@@ -22,7 +22,10 @@ interface WrapperProps {
 
 const render = (ui: any, { route = '/', initialState = {} } = {}) => {
   window.history.pushState({}, 'Test page', route);
-  const store = configureStore({ reducer: rootReducer, preloadedState: initialState });
+  const store = configureStore({
+    reducer: rootReducer,
+    preloadedState: initialState,
+  });
 
   const Wrapper = ({ children }: WrapperProps) => {
     return (
@@ -33,9 +36,6 @@ const render = (ui: any, { route = '/', initialState = {} } = {}) => {
   };
 
   return rtlRender(ui, { wrapper: Wrapper });
-}
+};
 
-// re-export everything
-export * from '@testing-library/react';
-// override render method
-export default render; //{ render };
+export default render;
